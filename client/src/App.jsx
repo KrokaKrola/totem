@@ -1,12 +1,17 @@
 import React from 'react';
-import styles from 'styles/app.module.scss';
+import { Switch, Route } from 'react-router-dom';
+import Home from 'pages/home';
+import withLayout from 'hocs/withLayout';
 
-function App() {
-  return (
-    <div className={styles.wrapper}>
-      1
-    </div>
-  );
-}
+const App = () => (
+  <Switch>
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Route path="*">
+      <div>404</div>
+    </Route>
+  </Switch>
+);
 
-export default App;
+export default withLayout(App);

@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: $default-font;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $black;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  &.no-style {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+[contenteditable='true']:empty:before {
+  content: attr(data-placeholder);
+  color: #131313;
+  font-size: inherit;
+  display: block; /* For Firefox */
+}
+
+select {
+  appearance: none;
+  &::-ms-expand {
+    // для IE
+    display: none;
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+blockquote {
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
